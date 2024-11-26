@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Classe sélectionnée -->
+    <TextView
+        android:id="@+id/selectedClassTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Classe sélectionnée :"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:id="@+id/selectedClassAvatar"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginBottom="32dp" />
+
+    <!-- Roulette -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/rouletteSlot1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/archer_neutre"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/rouletteSlot2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/mage_neutre"
+            android:layout_margin="8dp" />
+
+        <ImageView
+            android:id="@+id/rouletteSlot3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/guerrier_neutre"
+            android:layout_margin="8dp" />
+    </LinearLayout>
+
+    <!-- Bouton pour faire tourner la roulette -->
+    <Button
+        android:id="@+id/spinButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faire tourner la roulette"
+        android:layout_marginTop="32dp" />
+</LinearLayout>

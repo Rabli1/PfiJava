@@ -47,13 +47,14 @@ public class MainActivity extends AppCompatActivity {
 
         startButton.setOnClickListener(v -> {
             if (!selectedClass.isEmpty()) {
-                Intent intent = new Intent(MainActivity.this, Combat1Activity.class);
-                intent.putExtra("selectedClass", selectedClass);
+                Intent intent = new Intent(MainActivity.this, CasinoActivity.class);
+                intent.putExtra("selectedClass", selectedClass); // Transférer la classe choisie
                 startActivity(intent);
             } else {
                 startButton.setError("Veuillez sélectionner une classe !");
             }
         });
+
     }
 
     private void changeExpression(ImageView imageView, int classIndex) {
