@@ -39,15 +39,11 @@ public class Combat1Activity extends AppCompatActivity {
         ImageView enemyAvatarImageView = findViewById(R.id.enemyAvatarImageView);
         ProgressBar playerHealthBar = findViewById(R.id.playerHealthBar);
         ProgressBar enemyHealthBar = findViewById(R.id.enemyHealthBar);
-        ImageView playerCursor = findViewById(R.id.playerCursor);
-        ImageView enemyCursor = findViewById(R.id.enemyCursor);
         TextView playerActionText = findViewById(R.id.playerActionText);
         TextView enemyActionText = findViewById(R.id.enemyActionText);
         Button attackButton = findViewById(R.id.attackButton);
         Button defendButton = findViewById(R.id.defendButton);
         Button healButton = findViewById(R.id.healButton);
-
-        highlightTurn(playerCursor, enemyCursor, isPlayerTurn);
 
         playerAvatarImageView.setOnClickListener(v -> {
             currentExpression = (currentExpression + 1) % avatarExpressions.length;
@@ -62,7 +58,7 @@ public class Combat1Activity extends AppCompatActivity {
                 updateHealthBars(playerHealthBar, enemyHealthBar);
                 if (checkGameOver(playerHealthBar, enemyHealthBar)) return;
                 isPlayerTurn = false;
-                delayEnemyTurn(playerCursor, enemyCursor, playerActionText, enemyActionText, playerHealthBar, enemyHealthBar);
+                delayEnemyTurn(playerActionText, enemyActionText, playerHealthBar, enemyHealthBar);
             }
         });
 
@@ -70,7 +66,7 @@ public class Combat1Activity extends AppCompatActivity {
             if (isPlayerTurn) {
                 showAction(playerActionText, "Vous défendez !");
                 isPlayerTurn = false;
-                delayEnemyTurn(playerCursor, enemyCursor, playerActionText, enemyActionText, playerHealthBar, enemyHealthBar);
+                delayEnemyTurn(playerActionText, enemyActionText, playerHealthBar, enemyHealthBar);
             }
         });
 
@@ -81,7 +77,7 @@ public class Combat1Activity extends AppCompatActivity {
                 updateHealthBars(playerHealthBar, enemyHealthBar);
                 if (checkGameOver(playerHealthBar, enemyHealthBar)) return;
                 isPlayerTurn = false;
-                delayEnemyTurn(playerCursor, enemyCursor, playerActionText, enemyActionText, playerHealthBar, enemyHealthBar);
+                delayEnemyTurn(playerActionText, enemyActionText, playerHealthBar, enemyHealthBar);
             }
         });
     }
@@ -92,12 +88,10 @@ public class Combat1Activity extends AppCompatActivity {
         }
     }
 
-    private void delayEnemyTurn(ImageView playerCursor, ImageView enemyCursor, TextView playerActionText, TextView enemyActionText, ProgressBar playerHealthBar, ProgressBar enemyHealthBar) {
+    private void delayEnemyTurn(TextView playerActionText, TextView enemyActionText, ProgressBar playerHealthBar, ProgressBar enemyHealthBar) {
         new Handler().postDelayed(() -> {
-            highlightTurn(playerCursor, enemyCursor, isPlayerTurn);
             enemyTurn(enemyActionText, playerHealthBar, enemyHealthBar);
             if (checkGameOver(playerHealthBar, enemyHealthBar)) return;
-            highlightTurn(playerCursor, enemyCursor, isPlayerTurn);
         }, 1000);
     }
 
@@ -120,16 +114,6 @@ public class Combat1Activity extends AppCompatActivity {
     private void updateHealthBars(ProgressBar playerHealthBar, ProgressBar enemyHealthBar) {
         playerHealthBar.setProgress(playerHP);
         enemyHealthBar.setProgress(enemyHP);
-    }
-
-    private void highlightTurn(ImageView playerCursor, ImageView enemyCursor, boolean isPlayerTurn) {
-        if (isPlayerTurn) {
-            playerCursor.setVisibility(View.VISIBLE);
-            enemyCursor.setVisibility(View.INVISIBLE);
-        } if(!isPlayerTurn) {
-            playerCursor.setVisibility(View.INVISIBLE);
-            enemyCursor.setVisibility(View.VISIBLE);
-        }
     }
 
     private void showAction(TextView actionText, String message) {

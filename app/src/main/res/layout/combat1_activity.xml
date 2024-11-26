@@ -19,14 +19,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <!-- Cursor above avatar -->
-            <ImageView
-                android:id="@+id/playerCursor"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/cursor"
-                android:layout_marginBottom="8dp"
-                android:visibility="gone" />
             <!-- Floating action string -->
             <TextView
                 android:id="@+id/playerActionText"
@@ -62,14 +54,6 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center">
-            <!-- Cursor above avatar -->
-            <ImageView
-                android:id="@+id/enemyCursor"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/cursor"
-                android:layout_marginBottom="8dp"
-                android:visibility="visible" />
             <!-- Floating action string -->
             <TextView
                 android:id="@+id/enemyActionText"
