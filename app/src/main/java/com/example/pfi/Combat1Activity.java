@@ -14,11 +14,7 @@ import java.util.Random;
 
 public class Combat1Activity extends AppCompatActivity {
     private int currentExpression = 0;
-    private final int[] avatarExpressions = {
-            R.drawable.avatar_happy,
-            R.drawable.avatar_sad,
-            R.drawable.avatar_angry
-    };
+
 
     private int playerHP = 100;
     private int enemyHP = 100;
@@ -44,11 +40,6 @@ public class Combat1Activity extends AppCompatActivity {
         Button attackButton = findViewById(R.id.attackButton);
         Button defendButton = findViewById(R.id.defendButton);
         Button healButton = findViewById(R.id.healButton);
-
-        playerAvatarImageView.setOnClickListener(v -> {
-            currentExpression = (currentExpression + 1) % avatarExpressions.length;
-            playerAvatarImageView.setImageResource(avatarExpressions[currentExpression]);
-        });
 
         attackButton.setOnClickListener(v -> {
             if (isPlayerTurn) {
