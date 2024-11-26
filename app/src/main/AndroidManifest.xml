@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Combat1Activity"></activity>
+        <activity android:name=".VictoireActivity"></activity>
+        <activity android:name=".DefaiteActivity"></activity>
+
     </application>
 
 </manifest>

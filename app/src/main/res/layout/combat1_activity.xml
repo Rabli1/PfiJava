@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <!-- Avatars and Health Bars -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Wizard (Player) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <!-- Cursor above avatar -->
+            <ImageView
+                android:id="@+id/playerCursor"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/cursor"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone" />
+            <!-- Floating action string -->
+            <TextView
+                android:id="@+id/playerActionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="#6200EE"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/playerAvatarImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/avatar_happy"
+                android:contentDescription="Avatar du joueur"
+                android:layout_marginBottom="8dp" />
+            <ProgressBar
+                android:id="@+id/playerHealthBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="100"
+                android:progressTint="#00FF00" />
+        </LinearLayout>
+
+        <!-- Goblin (Enemy) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <!-- Cursor above avatar -->
+            <ImageView
+                android:id="@+id/enemyCursor"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/cursor"
+                android:layout_marginBottom="8dp"
+                android:visibility="visible" />
+            <!-- Floating action string -->
+            <TextView
+                android:id="@+id/enemyActionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="#FF0000"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:visibility="gone" />
+            <ImageView
+                android:id="@+id/enemyAvatarImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/happy_goblin"
+                android:contentDescription="Avatar de l'ennemi"
+                android:layout_marginBottom="8dp" />
+            <ProgressBar
+                android:id="@+id/enemyHealthBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="8dp"
+                android:max="100"
+                android:progress="100"
+                android:progressTint="#FF0000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Combat Choices -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <Button
+            android:id="@+id/attackButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Attaquer"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bouton_rond"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/defendButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Défendre"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bouton_rond"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/healButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Soigner"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bouton_rond" />
+    </LinearLayout>
+</LinearLayout>
