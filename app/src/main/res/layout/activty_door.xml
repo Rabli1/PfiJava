@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <!-- Première porte et ses boutons -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageViewDoor1"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:src="@drawable/dongeon_door"
+            android:contentDescription="Porte 1"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/buttonDoor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Porte 1" />
+
+    </LinearLayout>
+
+    <!-- Deuxième porte et ses boutons -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageViewDoor2"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:src="@drawable/dongeon_door"
+            android:contentDescription="Porte 2"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/buttonDoor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Porte 2" />
+
+    </LinearLayout>
+
+</LinearLayout>
