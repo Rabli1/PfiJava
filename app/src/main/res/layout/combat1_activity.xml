@@ -34,7 +34,7 @@
                 android:id="@+id/playerAvatarImageView"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:src="@drawable/avatar_happy"
+                android:src="@drawable/mage_neutre"
                 android:contentDescription="Avatar du joueur"
                 android:layout_marginBottom="8dp" />
             <ProgressBar
