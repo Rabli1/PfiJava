@@ -41,6 +41,12 @@ public class Combat1Activity extends AppCompatActivity {
         Button defendButton = findViewById(R.id.defendButton);
         Button healButton = findViewById(R.id.healButton);
 
+        //Recupere la classe
+        String selectedClass = getIntent().getStringExtra("selectedClass");
+
+        int avatarResource = getAvatarResource(selectedClass);
+        playerAvatarImageView.setImageResource(avatarResource);
+
         attackButton.setOnClickListener(v -> {
             if (isPlayerTurn) {
                 playAttackSound();
@@ -135,6 +141,21 @@ public class Combat1Activity extends AppCompatActivity {
         Intent intent = new Intent(Combat1Activity.this, DefaiteActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private int getAvatarResource(String selectedClass) {
+        switch (selectedClass) {
+            case "Archer":
+                return R.drawable.archer_neutre;
+            case "Mage":
+                return R.drawable.mage_neutre;
+            case "Guerrier":
+                return R.drawable.guerrier_neutre;
+            case "Voleur":
+                return R.drawable.voleur_neutre;
+            default:
+                return R.drawable.archer_neutre; // Valeur par défaut
+        }
     }
 
     @Override

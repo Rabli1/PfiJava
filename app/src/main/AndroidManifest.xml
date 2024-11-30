@@ -21,9 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Combat1Activity"></activity>
-        <activity android:name=".VictoireActivity"></activity>
-        <activity android:name=".DefaiteActivity"></activity>
+        <activity android:name=".DoorActivity"/>
+        <activity android:name=".CasinoActivity" />
+        <activity android:name=".Combat1Activity"/>
+        <activity android:name=".VictoireActivity"/>
+        <activity android:name=".DefaiteActivity"/>
 
     </application>
 

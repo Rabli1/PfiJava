@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         startButton.setOnClickListener(v -> {
             if (!selectedClass.isEmpty()) {
-                Intent intent = new Intent(MainActivity.this, CasinoActivity.class);
+                Intent intent = new Intent(MainActivity.this, DoorActivity.class);
                 intent.putExtra("selectedClass", selectedClass); // Transférer la classe choisie
                 startActivity(intent);
             } else {
