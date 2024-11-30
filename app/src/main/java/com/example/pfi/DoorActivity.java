@@ -14,14 +14,16 @@ public class DoorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_door);
 
-        String selectedClass = getIntent().getStringExtra("selectedClass");
+        Bundle extras = getIntent().getExtras();
+        String selectedClass = extras.getString("selectedClass");
+        int expression = extras.getInt("expression");
 
         Button buttonDoor1 = findViewById(R.id.buttonDoor1);
         Button buttonDoor2 = findViewById(R.id.buttonDoor2);
 
         buttonDoor1.setOnClickListener(v -> {
             Intent intent = new Intent(DoorActivity.this, CasinoActivity.class);
-            intent.putExtra("selectedClass", selectedClass); // Transférer la classe choisie
+            intent.putExtras(extras);// Transférer la classe choisie
             startActivity(intent);
         });
 

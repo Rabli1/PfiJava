@@ -42,7 +42,9 @@ public class Combat1Activity extends AppCompatActivity {
         Button healButton = findViewById(R.id.healButton);
 
         //Recupere la classe
-        String selectedClass = getIntent().getStringExtra("selectedClass");
+        Bundle extras = getIntent().getExtras();
+        String selectedClass = extras.getString("selectedClass");
+        int expression = extras.getInt("expression");
 
         int avatarResource = getAvatarResource(selectedClass);
         playerAvatarImageView.setImageResource(avatarResource);

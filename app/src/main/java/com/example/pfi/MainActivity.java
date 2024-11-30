@@ -48,7 +48,10 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(v -> {
             if (!selectedClass.isEmpty()) {
                 Intent intent = new Intent(MainActivity.this, DoorActivity.class);
-                intent.putExtra("selectedClass", selectedClass); // Transférer la classe choisie
+                Bundle extras = new Bundle();
+                extras.putString("selectedClass", selectedClass);
+                extras.putInt("expression", currentExpression);
+                intent.putExtras(extras); // Transférer la classe choisie
                 startActivity(intent);
             } else {
                 startButton.setError("Veuillez sélectionner une classe !");
